@@ -1,0 +1,4 @@
+/* Plans page composition. Section internals live in their own folders. */
+[id] {
+  scroll-margin-top: calc(var(--nav-h) + 1rem);
+}

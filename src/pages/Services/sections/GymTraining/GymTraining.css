@@ -1,0 +1,11 @@
+/* GymTraining — section-scoped refinements.
+   Shared layout lives in components/ServiceSection/ServiceSection.css. */
+
+.svc-wrap--gym-training .svc {
+  scroll-margin-top: calc(var(--nav-h) + 1rem);
+}
+
+.svc-wrap--gym-training .svc__title {
+  /* Keep long service names from wrapping awkwardly on mid-size screens */
+  text-wrap: balance;
+}

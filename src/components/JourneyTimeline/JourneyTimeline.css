@@ -1,0 +1,122 @@
+.journey {
+  background: var(--bg-900);
+  overflow: hidden;
+}
+
+.journey__track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.6vw, 1.5rem);
+  list-style: none;
+  padding-top: 2.5rem;
+}
+
+.journey__line {
+  position: absolute;
+  top: 3.5rem;
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  background: var(--border);
+  overflow: hidden;
+}
+.journey__line-fill {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.journey__step {
+  position: relative;
+  display: grid;
+  gap: var(--sp-4);
+  justify-items: start;
+}
+
+.journey__node {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--bg-800);
+  border: 1px solid var(--border-2);
+  border-radius: var(--r-round);
+  transition: border-color var(--t-med) var(--ease), background-color var(--t-med) var(--ease),
+    transform var(--t-med) var(--ease);
+}
+.journey__node span {
+  font-family: var(--font-tech);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  transition: color var(--t-med) var(--ease);
+}
+.journey__step:hover .journey__node {
+  border-color: var(--accent);
+  background: var(--accent);
+  transform: translateY(-3px);
+}
+.journey__step:hover .journey__node span {
+  color: #0a0a0a;
+}
+
+.journey__card {
+  display: grid;
+  gap: 0.5rem;
+  padding-right: 0.5rem;
+}
+.journey__title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+}
+.journey__copy {
+  font-size: var(--fs-sm);
+  line-height: 1.65;
+  color: var(--text-dim);
+}
+
+@media (max-width: 900px) {
+  .journey__track {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-top: 0;
+    padding-left: 1.5rem;
+  }
+  .journey__line {
+    top: 12px;
+    bottom: 12px;
+    left: 21px;
+    right: auto;
+    width: 1px;
+    height: auto;
+  }
+  .journey__line-fill {
+    width: 100%;
+    transform: scaleX(1);
+    transform-origin: top;
+  }
+  .journey__step {
+    grid-template-columns: 44px 1fr;
+    gap: var(--sp-4);
+    align-items: start;
+    padding-bottom: var(--sp-5);
+  }
+  .journey__node {
+    position: relative;
+    z-index: 2;
+  }
+  .journey__card {
+    padding-right: 0;
+    padding-top: 0.35rem;
+  }
+}

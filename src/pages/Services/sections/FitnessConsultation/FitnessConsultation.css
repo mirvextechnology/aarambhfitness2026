@@ -1,0 +1,11 @@
+/* FitnessConsultation — section-scoped refinements.
+   Shared layout lives in components/ServiceSection/ServiceSection.css. */
+
+.svc-wrap--fitness-consultation .svc {
+  scroll-margin-top: calc(var(--nav-h) + 1rem);
+}
+
+.svc-wrap--fitness-consultation .svc__title {
+  /* Keep long service names from wrapping awkwardly on mid-size screens */
+  text-wrap: balance;
+}

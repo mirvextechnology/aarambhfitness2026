@@ -1,0 +1,51 @@
+.svc-cta {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-800);
+  border-top: 1px solid var(--border);
+}
+.svc-cta__glow {
+  position: absolute;
+  left: 50%;
+  bottom: -280px;
+  transform: translateX(-50%);
+  width: min(860px, 94vw);
+  height: 480px;
+  background: radial-gradient(ellipse at center, var(--accent-glow) 0%, transparent 66%);
+  opacity: 0.3;
+  pointer-events: none;
+}
+.svc-cta__inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: clamp(0.9rem, 1.8vw, 1.35rem);
+  justify-items: center;
+  text-align: center;
+  max-width: 54rem;
+}
+.svc-cta__title {
+  font-size: clamp(2rem, 5.4vw, 3.6rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+}
+.svc-cta__lede {
+  max-width: 54ch;
+  font-size: var(--fs-md);
+  line-height: 1.65;
+  color: var(--text-dim);
+}
+.svc-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 0.3rem;
+}
+@media (max-width: 700px) {
+  .svc-cta__actions .btn {
+    flex: 1 1 100%;
+  }
+}

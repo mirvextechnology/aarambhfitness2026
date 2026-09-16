@@ -1,0 +1,86 @@
+.cons-hero {
+  position: relative;
+  padding-top: calc(var(--nav-h) + clamp(2.5rem, 6vw, 4.5rem));
+  padding-bottom: clamp(2rem, 4vw, 3.5rem);
+  overflow: hidden;
+  background: var(--bg-900);
+  border-bottom: 1px solid var(--border);
+}
+.cons-hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image: var(--grid-lines);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(180deg, #000, transparent 85%);
+  -webkit-mask-image: linear-gradient(180deg, #000, transparent 85%);
+  opacity: 0.7;
+}
+.cons-hero__glow {
+  position: absolute;
+  left: 12%;
+  top: -160px;
+  width: 520px;
+  height: 380px;
+  background: radial-gradient(ellipse at center, var(--accent-glow) 0%, transparent 66%);
+  opacity: 0.26;
+  pointer-events: none;
+}
+.cons-hero__content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: clamp(0.8rem, 1.6vw, 1.15rem);
+  max-width: 54rem;
+}
+.cons-hero__title {
+  font-size: clamp(2.2rem, 6vw, 4.4rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+.cons-hero__lede {
+  max-width: 50ch;
+  font-size: var(--fs-lg);
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+.cons-hero__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  list-style: none;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+.cons-hero__facts li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-tech);
+  font-size: 0.7rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.cons-hero__facts svg {
+  color: var(--accent);
+}
+.cons-hero__notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  max-width: 68ch;
+  padding: 0.75rem 1rem;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+  background: rgba(255, 193, 77, 0.07);
+  border: 1px solid rgba(255, 193, 77, 0.28);
+  border-radius: var(--r-xs);
+}
+.cons-hero__notice svg {
+  flex: none;
+  margin-top: 2px;
+  color: var(--warn);
+}

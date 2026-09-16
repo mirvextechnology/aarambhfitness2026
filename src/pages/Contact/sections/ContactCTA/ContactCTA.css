@@ -1,0 +1,50 @@
+.ccta {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-800);
+  border-top: 1px solid var(--border);
+}
+.ccta__glow {
+  position: absolute;
+  left: 50%;
+  bottom: -260px;
+  transform: translateX(-50%);
+  width: min(820px, 92vw);
+  height: 460px;
+  background: radial-gradient(ellipse at center, var(--accent-glow) 0%, transparent 66%);
+  opacity: 0.28;
+  pointer-events: none;
+}
+.ccta__inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: clamp(0.9rem, 1.8vw, 1.35rem);
+  justify-items: center;
+  text-align: center;
+  max-width: 50rem;
+}
+.ccta__title {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+}
+.ccta__lede {
+  max-width: 50ch;
+  font-size: var(--fs-md);
+  line-height: 1.65;
+  color: var(--text-dim);
+}
+.ccta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+}
+@media (max-width: 700px) {
+  .ccta__actions .btn {
+    flex: 1 1 100%;
+  }
+}

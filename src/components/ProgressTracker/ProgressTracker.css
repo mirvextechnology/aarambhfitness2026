@@ -1,0 +1,213 @@
+.tracker {
+  background: var(--bg-800);
+}
+
+.tracker__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-5);
+  flex-wrap: wrap;
+  margin-bottom: clamp(1.75rem, 3.5vw, 2.75rem);
+}
+.tracker__head > div {
+  display: grid;
+  gap: 0.65rem;
+  max-width: 56ch;
+}
+.tracker__title {
+  font-size: var(--fs-2xl);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+.tracker__lede {
+  font-size: var(--fs-md);
+  line-height: 1.65;
+  color: var(--text-dim);
+}
+.tracker__private {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.85rem;
+  font-family: var(--font-tech);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  background: var(--bg-850);
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+}
+
+.tracker__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+/* ---- form ---- */
+.tracker__form {
+  display: grid;
+  gap: var(--sp-4);
+  align-content: start;
+  padding: clamp(1.1rem, 2.5vw, 1.75rem);
+  background: var(--bg-850);
+}
+.tracker__fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+.tracker__fields .span-2 {
+  grid-column: span 2;
+}
+.tracker__form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+/* ---- panel ---- */
+.tracker__panel {
+  display: grid;
+  gap: var(--sp-4);
+  align-content: start;
+  padding: clamp(1.1rem, 2.5vw, 1.75rem);
+  background: var(--bg-900);
+}
+
+.tracker__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+  gap: 0.75rem;
+  padding-bottom: var(--sp-4);
+  border-bottom: 1px solid var(--border);
+}
+.tracker__stats div {
+  display: grid;
+  gap: 0.2rem;
+}
+.tracker__stats strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-tech);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.tracker__stats .is-down {
+  color: var(--ok);
+}
+.tracker__stats .is-up {
+  color: var(--warn);
+}
+
+.tracker__chart {
+  padding: 0.5rem 0;
+}
+.tracker__chart svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.tracker__hint {
+  font-size: var(--fs-sm);
+  color: var(--text-faint);
+}
+
+.tracker__records {
+  display: grid;
+  gap: 0.35rem;
+  list-style: none;
+  max-height: 260px;
+  overflow-y: auto;
+}
+.tracker__record {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 0.7rem;
+  background: var(--bg-850);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xs);
+}
+.tracker__record-date {
+  font-size: 0.72rem;
+  color: var(--text-faint);
+}
+.tracker__record-weight {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.tracker__record-notes {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tracker__record-delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  color: var(--text-faint);
+  border-radius: var(--r-xs);
+  transition: color var(--t-fast) var(--ease), background-color var(--t-fast) var(--ease);
+}
+.tracker__record-delete:hover {
+  color: var(--danger);
+  background: rgba(255, 77, 77, 0.1);
+}
+
+.tracker__empty {
+  display: grid;
+  gap: 0.5rem;
+  padding: var(--sp-5) 0;
+  justify-items: start;
+}
+.tracker__empty strong {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.tracker__empty p {
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  color: var(--text-dim);
+  max-width: 44ch;
+}
+
+/* ---- responsive ---- */
+@media (max-width: 900px) {
+  .tracker__grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .tracker__fields {
+    grid-template-columns: 1fr;
+  }
+  .tracker__fields .span-2 {
+    grid-column: span 1;
+  }
+  .tracker__form-actions .btn {
+    flex: 1 1 100%;
+  }
+  .tracker__record {
+    grid-template-columns: auto 1fr auto;
+  }
+  .tracker__record-notes {
+    grid-column: 1 / -1;
+  }
+}

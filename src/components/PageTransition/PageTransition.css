@@ -1,0 +1,34 @@
+.page-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 990;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  pointer-events: none;
+}
+
+.page-transition span {
+  display: block;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  background: #0d0d0d;
+  transition: transform 0.34s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.page-transition span:nth-child(2) { background: #101010; }
+.page-transition span:nth-child(3) { background: #131313; }
+.page-transition span:nth-child(4) { background: var(--accent); }
+
+.page-transition--cover span {
+  transform: scaleY(1);
+}
+
+.page-transition--reveal span {
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    display: none;
+  }
+}

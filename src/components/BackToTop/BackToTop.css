@@ -1,0 +1,39 @@
+.back-to-top {
+  position: fixed;
+  right: clamp(0.9rem, 2vw, 1.6rem);
+  bottom: calc(5.2rem + 4.4rem);
+  z-index: 790;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  color: var(--text-dim);
+  background: var(--bg-700);
+  border: 1px solid var(--border);
+  border-radius: var(--r-round);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity var(--t-med) var(--ease), transform var(--t-med) var(--ease),
+    visibility var(--t-med) var(--ease), color var(--t-fast) var(--ease),
+    border-color var(--t-fast) var(--ease);
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.back-to-top:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    /* sit above the mobile sticky bar and below the WhatsApp FAB */
+    bottom: calc(72px + env(safe-area-inset-bottom, 0px) + 4.6rem);
+    width: 38px;
+    height: 38px;
+  }
+}

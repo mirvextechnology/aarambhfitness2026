@@ -1,0 +1,154 @@
+/* ============================================================
+   Typography primitives
+   ============================================================ */
+
+.display-hero {
+  font-family: var(--font-display);
+  font-size: var(--fs-hero);
+  font-weight: 700;
+  line-height: 0.86;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.display-1 {
+  font-family: var(--font-display);
+  font-size: var(--fs-3xl);
+  font-weight: 600;
+  line-height: 0.94;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.display-2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+}
+
+.display-3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.lede {
+  font-size: var(--fs-lg);
+  line-height: 1.55;
+  color: var(--text-muted);
+  font-weight: 400;
+  max-width: 62ch;
+}
+
+.body-lg {
+  font-size: var(--fs-md);
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.body-sm {
+  font-size: var(--fs-sm);
+  line-height: 1.65;
+  color: var(--text-dim);
+}
+
+.muted {
+  color: var(--text-dim);
+}
+.faint {
+  color: var(--text-faint);
+}
+.accent-text {
+  color: var(--accent);
+}
+.white {
+  color: var(--text);
+}
+
+/* Small uppercase technical label */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-tech);
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.eyebrow--neutral {
+  color: var(--text-faint);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 22px;
+  height: 1px;
+  background: currentColor;
+  flex: none;
+}
+
+.eyebrow--plain::before {
+  display: none;
+}
+
+.mono {
+  font-family: var(--font-tech);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
+.tech-label {
+  font-family: var(--font-tech);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.big-number {
+  font-family: var(--font-display);
+  font-size: var(--fs-mega);
+  font-weight: 700;
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--border-2);
+}
+
+.big-number--solid {
+  color: var(--text);
+  -webkit-text-stroke: 0;
+}
+
+.section-index {
+  font-family: var(--font-tech);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+}
+
+a.text-link {
+  color: var(--text);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 1px;
+  transition: color var(--t-fast) var(--ease), opacity var(--t-fast) var(--ease);
+}
+a.text-link:hover {
+  color: var(--accent);
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 0.3em;
+}

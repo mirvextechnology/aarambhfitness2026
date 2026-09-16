@@ -1,0 +1,102 @@
+/* ============================================================
+   AARAMBH FITNESS — Design tokens
+   Single source of truth for colour, type, space, motion.
+   ============================================================ */
+
+:root {
+  /* ---------- Surfaces (dark) ---------- */
+  --bg-900: #0a0a0a;
+  --bg-850: #0d0d0d;
+  --bg-800: #101010;
+  --bg-700: #151515;
+  --bg-600: #1b1b1b;
+  --bg-500: #212121;
+
+  /* ---------- Accent ---------- */
+  --accent: #ff5a1f;
+  --accent-2: #ff6a00;
+  --accent-soft: rgba(255, 90, 31, 0.12);
+  --accent-glow: rgba(255, 90, 31, 0.35);
+  --accent-line: rgba(255, 90, 31, 0.45);
+
+  /* ---------- Text ---------- */
+  --text: #ffffff;
+  --text-muted: #d5d5d5;
+  --text-dim: #a0a0a0;
+  --text-faint: #777777;
+
+  /* ---------- Borders ---------- */
+  --border: #252525;
+  --border-2: #303030;
+  --border-soft: rgba(255, 255, 255, 0.07);
+
+  /* ---------- Status ---------- */
+  --ok: #3ddc84;
+  --warn: #ffc14d;
+  --danger: #ff4d4d;
+
+  /* ---------- Type ---------- */
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Oswald', 'Inter', sans-serif;
+  --font-tech: 'Space Grotesk', 'Inter', sans-serif;
+
+  /* Fluid type scale */
+  --fs-eyebrow: clamp(0.625rem, 0.6rem + 0.15vw, 0.72rem);
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+     --fs-lg: clamp(1rem, 1rem + 0.6vw, 1.15rem);
+  --fs-xl: clamp(1.375rem, 1.15rem + 1.1vw, 2rem);
+  --fs-2xl: clamp(1.75rem, 1.3rem + 2.2vw, 3rem);
+  --fs-3xl: clamp(2.25rem, 1.4rem + 4vw, 4.5rem);
+ --fs-hero: clamp(2.5rem, 0.9rem + 7.2vw, 6.5rem);
+  --fs-mega: clamp(3.5rem, 1rem + 13vw, 13rem);
+
+  /* ---------- Space ---------- */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4rem;
+  --sp-9: 6rem;
+  --section-y: clamp(3.5rem, 2rem + 6vw, 8rem);
+  --section-y-sm: clamp(2.5rem, 1.5rem + 3.5vw, 4.5rem);
+  --gutter: clamp(1.125rem, 4vw, 3.5rem);
+
+  /* ---------- Layout ---------- */
+  --container: 1400px;
+  --container-narrow: 1120px;
+  --nav-h: 76px;
+  --nav-h-scroll: 62px;
+
+  /* ---------- Radii (kept tight & editorial) ---------- */
+  --r-xs: 2px;
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 14px;
+  --r-pill: 999px;
+  --r-round: 50%;
+
+  /* ---------- Motion ---------- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+  --t-fast: 160ms;
+  --t-med: 320ms;
+  --t-slow: 620ms;
+  --t-page: 420ms;
+
+  /* ---------- Elevation ---------- */
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-2: 0 12px 40px rgba(0, 0, 0, 0.55);
+  --shadow-3: 0 30px 80px rgba(0, 0, 0, 0.65);
+  --glow-accent: 0 0 0 1px var(--accent-line), 0 10px 40px -12px var(--accent-glow);
+
+  /* ---------- Texture ---------- */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  --grid-lines: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+}

@@ -1,0 +1,89 @@
+.cmap {
+  background: var(--bg-800);
+}
+
+.cmap__frame {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  filter: grayscale(0.55) contrast(1.05) brightness(0.85);
+  transition: filter var(--t-med) var(--ease);
+}
+.cmap__frame:hover {
+  filter: grayscale(0.25) contrast(1.05) brightness(0.92);
+}
+.cmap__frame iframe {
+  display: block;
+  width: 100%;
+  height: clamp(320px, 46vw, 500px);
+  border: 0;
+}
+
+.cmap__placeholder {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: clamp(320px, 42vw, 460px);
+  overflow: hidden;
+  background: var(--bg-850);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+}
+.cmap__placeholder-grid {
+  position: absolute;
+  inset: 0;
+  background-image: var(--grid-lines);
+  background-size: 48px 48px;
+  opacity: 0.85;
+  mask-image: radial-gradient(ellipse at center, #000 20%, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 20%, transparent 78%);
+}
+.cmap__placeholder-body {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 0.7rem;
+  justify-items: center;
+  text-align: center;
+  padding: var(--sp-5);
+  max-width: 32rem;
+}
+.cmap__pin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-line);
+  border-radius: var(--r-round);
+  box-shadow: 0 0 0 10px rgba(255, 90, 31, 0.07);
+}
+.cmap__placeholder-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1.05;
+  color: var(--text);
+}
+.cmap__placeholder-address {
+  font-size: var(--fs-md);
+  color: var(--text-dim);
+}
+.cmap__hint {
+  font-size: 0.72rem;
+  line-height: 1.6;
+  color: var(--text-faint);
+  max-width: 46ch;
+}
+.cmap__hint code {
+  font-family: var(--font-tech);
+  font-size: 0.7rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}

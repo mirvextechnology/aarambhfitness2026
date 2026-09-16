@@ -1,0 +1,25 @@
+/*
+ * Home page composition.
+ * Section internals live in their own folders; this file only controls
+ * page-level rhythm and the transitions between adjacent sections.
+ */
+
+/* Tighten the join between the tool sections so they read as one suite. */
+#fitness-assessment + section,
+#bmi-calculator,
+#goal-planner,
+#diet-planner {
+  scroll-margin-top: calc(var(--nav-h) + 1rem);
+}
+
+/* Every anchored section must clear the fixed navbar. */
+[id] {
+  scroll-margin-top: calc(var(--nav-h) + 1rem);
+}
+
+/* Home-only type refinement */
+@media (max-width: 430px) {
+  .section {
+    padding-block: var(--section-y-sm);
+  }
+}

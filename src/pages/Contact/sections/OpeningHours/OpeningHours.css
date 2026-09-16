@@ -1,0 +1,229 @@
+.hours {
+  background: var(--bg-900);
+}
+
+/* Two columns so the schedule does not leave a wide empty gap on the right. */
+.hours__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  align-items: stretch;
+}
+
+.hours__panel {
+  display: grid;
+  gap: var(--sp-4);
+  align-content: start;
+  padding: clamp(1.15rem, 2.5vw, 1.75rem);
+  background: var(--bg-800);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+}
+
+.hours__visit {
+  display: grid;
+  gap: 0.85rem;
+  align-content: center;
+  padding: clamp(1.15rem, 2.5vw, 1.75rem);
+  background: var(--bg-800);
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--accent);
+  border-radius: var(--r-md);
+}
+.hours__visit-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.hours__visit-copy {
+  font-size: var(--fs-sm);
+  line-height: 1.65;
+  color: var(--text-dim);
+  max-width: 46ch;
+}
+.hours__visit-list {
+  display: grid;
+  gap: 0.55rem;
+  list-style: none;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+.hours__visit-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+.hours__visit-list svg {
+  flex: none;
+  margin-top: 3px;
+  color: var(--accent);
+}
+.hours__visit-list a {
+  color: var(--text);
+  border-bottom: 1px solid var(--border-2);
+  transition: color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
+}
+.hours__visit-list a:hover {
+  color: var(--accent);
+  border-color: var(--accent-line);
+}
+.hours__visit-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.hours__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+.hours__head .tech-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-dim);
+}
+.hours__head svg {
+  color: var(--accent);
+}
+
+.hours__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  font-family: var(--font-tech);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: var(--r-pill);
+}
+.hours__badge.is-open {
+  color: var(--ok);
+  background: rgba(61, 220, 132, 0.1);
+  border: 1px solid rgba(61, 220, 132, 0.32);
+}
+.hours__badge.is-closed {
+  color: var(--text-dim);
+  background: var(--bg-700);
+  border: 1px solid var(--border-2);
+}
+
+.hours__list {
+  display: grid;
+  list-style: none;
+}
+.hours__row {
+  display: grid;
+  grid-template-columns: minmax(110px, auto) 1fr auto;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.hours__row:last-child {
+  border-bottom: none;
+}
+.hours__row.is-today {
+  color: var(--text);
+}
+.hours__row.is-today .hours__day,
+.hours__row.is-today .hours__time {
+  color: var(--accent);
+  font-weight: 600;
+}
+.hours__day {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+.hours__day em {
+  font-style: normal;
+  font-family: var(--font-tech);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0a0a0a;
+  background: var(--accent);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+}
+.hours__dots {
+  border-bottom: 1px dotted var(--border-2);
+  transform: translateY(-3px);
+}
+.hours__time {
+  font-family: var(--font-tech);
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.hours__note {
+  font-size: 0.72rem;
+  line-height: 1.6;
+  color: var(--text-faint);
+}
+
+@media (max-width: 820px) {
+  .hours__layout {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 460px) {
+  .hours__visit-actions .btn {
+    flex: 1 1 100%;
+  }
+}
+
+.hours__empty {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-800);
+  border: 1px dashed var(--border-2);
+  border-radius: var(--r-md);
+  color: var(--accent);
+}
+.hours__empty div {
+  display: grid;
+  gap: 0.3rem;
+}
+.hours__empty h2 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.hours__empty p {
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+.hours__empty code {
+  font-family: var(--font-tech);
+  font-size: 0.78rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 0.05rem 0.3rem;
+  border-radius: 3px;
+}

@@ -1,0 +1,136 @@
+.physio {
+  background: var(--bg-900);
+}
+
+.physio__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(1.75rem, 4vw, 4rem);
+  align-items: center;
+}
+
+.physio__visual {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+}
+.physio__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.physio__visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 45%, rgba(10, 10, 10, 0.9) 100%);
+  pointer-events: none;
+}
+.physio__visual-tag {
+  position: absolute;
+  left: clamp(1rem, 2vw, 1.5rem);
+  bottom: clamp(1rem, 2vw, 1.5rem);
+  z-index: 2;
+  display: grid;
+  gap: 0.2rem;
+}
+.physio__visual-tag .tech-label {
+  color: var(--accent);
+}
+.physio__visual-tag strong {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+.physio__content {
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+.physio__title {
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+.physio__title em {
+  font-style: normal;
+  color: var(--accent);
+}
+.physio__lede {
+  font-size: var(--fs-md);
+  line-height: 1.7;
+  color: var(--text-dim);
+  max-width: 62ch;
+}
+
+.physio__list {
+  display: grid;
+  list-style: none;
+  border-top: 1px solid var(--border);
+}
+.physio__item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--sp-4);
+  align-items: baseline;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.physio__item-num {
+  font-family: var(--font-tech);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+}
+.physio__item span:last-child {
+  display: grid;
+  gap: 0.2rem;
+}
+.physio__item strong {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+.physio__item em {
+  font-style: normal;
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+.physio__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.physio__disclaimer {
+  font-size: 0.72rem;
+  line-height: 1.65;
+  color: var(--text-faint);
+  max-width: 74ch;
+  padding-left: 0.85rem;
+  border-left: 1px solid var(--border-2);
+}
+
+@media (max-width: 900px) {
+  .physio__grid {
+    grid-template-columns: 1fr;
+  }
+  .physio__visual {
+    aspect-ratio: 16 / 11;
+  }
+  .physio__cta .btn {
+    flex: 1 1 100%;
+  }
+}

@@ -1,0 +1,73 @@
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  border-radius: 50%;
+  will-change: transform;
+  mix-blend-mode: difference;
+}
+
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  transition: opacity 0.25s var(--ease);
+}
+
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  display: grid;
+  place-items: center;
+  transition: width 0.3s var(--ease), height 0.3s var(--ease), border-color 0.3s var(--ease),
+    background-color 0.3s var(--ease), opacity 0.25s var(--ease);
+}
+.cursor-ring.is-hovering {
+  width: 54px;
+  height: 54px;
+  border-color: var(--accent);
+  background: rgba(255, 90, 31, 0.12);
+}
+.cursor-ring.is-view {
+  width: 78px;
+  height: 78px;
+  border-color: var(--accent);
+  background: var(--accent);
+  mix-blend-mode: normal;
+}
+.cursor-ring__label {
+  font-family: var(--font-tech);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0a0a0a;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.cursor-ring.is-view .cursor-ring__label {
+  opacity: 1;
+  transform: none;
+}
+.cursor-dot.is-hidden,
+.cursor-ring.is-hidden {
+  opacity: 0;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+}

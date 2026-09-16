@@ -1,0 +1,11 @@
+/* DietNutrition — section-scoped refinements.
+   Shared layout lives in components/ServiceSection/ServiceSection.css. */
+
+.svc-wrap--diet-nutrition .svc {
+  scroll-margin-top: calc(var(--nav-h) + 1rem);
+}
+
+.svc-wrap--diet-nutrition .svc__title {
+  /* Keep long service names from wrapping awkwardly on mid-size screens */
+  text-wrap: balance;
+}

@@ -1,0 +1,299 @@
+.service-rail {
+  position: relative;
+  background: var(--bg-900);
+  overflow: hidden;
+}
+.service-rail.is-pinned {
+  min-height: 100dvh;
+}
+/* The pinned wrapper (not the section) carries the full-height layout, so
+   ScrollTrigger's pin-spacer is created inside the React-owned section. */
+.service-rail__pin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.service-rail.is-pinned .service-rail__pin {
+  min-height: 100dvh;
+}
+
+/* ---- header ---- */
+.service-rail__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-5);
+  flex-wrap: wrap;
+  margin-bottom: clamp(1.5rem, 3vw, 2.75rem);
+}
+.service-rail__heading {
+  display: grid;
+  gap: 0.7rem;
+  max-width: 44rem;
+}
+.service-rail__heading h2 {
+  text-transform: uppercase;
+}
+.service-rail__lede {
+  font-size: var(--fs-md);
+  line-height: 1.6;
+  color: var(--text-dim);
+  max-width: 56ch;
+}
+
+.service-rail__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.service-rail__nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: var(--text-dim);
+  border: 1px solid var(--border-2);
+  border-radius: var(--r-round);
+  transition: color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease),
+    background-color var(--t-fast) var(--ease);
+}
+.service-rail__nav:hover:not(:disabled) {
+  color: #0a0a0a;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.service-rail__count {
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  color: var(--text-faint);
+  min-width: 4.2rem;
+  text-align: center;
+}
+
+/* ---- track ---- */
+.service-rail__viewport {
+  position: relative;
+}
+.service-rail__track {
+  display: flex;
+  gap: clamp(0.75rem, 1.6vw, 1.5rem);
+  padding-inline: var(--gutter);
+  width: max-content;
+  will-change: transform;
+}
+
+/* ---- panel ---- */
+.service-panel {
+  position: relative;
+  flex: none;
+  width: clamp(260px, 26vw, 380px);
+  height: clamp(400px, 60vh, 560px);
+  display: block;
+  overflow: hidden;
+  background: var(--bg-800);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  transition: border-color var(--t-med) var(--ease), transform var(--t-med) var(--ease);
+}
+.service-panel:hover {
+  border-color: var(--accent-line);
+}
+
+.service-panel__media {
+  position: absolute;
+  inset: 0;
+}
+.service-panel__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.55) contrast(1.05);
+  transition: transform 0.9s var(--ease), filter var(--t-med) var(--ease);
+}
+.service-panel:hover .service-panel__media img {
+  transform: scale(1.07);
+  filter: grayscale(0) contrast(1.08);
+}
+.service-panel__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.25) 0%, rgba(10, 10, 10, 0.72) 52%, rgba(10, 10, 10, 0.96) 100%);
+}
+
+.service-panel__body {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(1.1rem, 2vw, 1.6rem);
+}
+
+.service-panel__number {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--accent-line);
+  transition: color var(--t-med) var(--ease);
+}
+.service-panel:hover .service-panel__number {
+  color: var(--accent);
+  -webkit-text-stroke: 1px transparent;
+}
+
+.service-panel__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+.service-panel__tagline {
+  display: block;
+  margin-top: 0.45rem;
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  color: var(--text-dim);
+}
+.service-panel__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.9rem;
+}
+.service-panel__meta .chip {
+  background: rgba(20, 20, 20, 0.72);
+  backdrop-filter: blur(4px);
+}
+.service-panel__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  font-family: var(--font-tech);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  transform: translateY(6px);
+  opacity: 0;
+  transition: transform var(--t-med) var(--ease), opacity var(--t-med) var(--ease);
+}
+.service-panel:hover .service-panel__cta,
+.service-panel:focus-visible .service-panel__cta {
+  transform: none;
+  opacity: 1;
+}
+
+/* active indicator */
+.service-panel::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.55s var(--ease);
+}
+.service-panel:hover::after {
+  transform: scaleX(1);
+}
+
+/* ---- footer ---- */
+.service-rail__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-5);
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+.service-rail__progress {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+  overflow: hidden;
+}
+.service-rail__progress span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s linear;
+}
+.service-rail__all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-tech);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  white-space: nowrap;
+  transition: color var(--t-fast) var(--ease);
+}
+.service-rail__all:hover {
+  color: var(--accent);
+}
+
+/* ---- mobile: native scroll-snap ---- */
+@media (max-width: 900px) {
+  .service-rail {
+    padding-block: var(--section-y-sm);
+  }
+  .service-rail__viewport {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: 0.5rem;
+  }
+  .service-rail__viewport::-webkit-scrollbar {
+    display: none;
+  }
+  .service-rail__track {
+    padding-inline: var(--gutter);
+    transform: none !important;
+  }
+  .service-panel {
+    scroll-snap-align: center;
+    width: min(76vw, 320px);
+    height: 420px;
+  }
+  .service-panel__cta {
+    opacity: 1;
+    transform: none;
+  }
+  .service-rail__controls {
+    display: none;
+  }
+  .service-rail__head {
+    margin-bottom: 1.25rem;
+  }
+  .service-rail__foot {
+    margin-top: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-rail__viewport {
+    overflow-x: auto;
+  }
+  .service-rail__track {
+    transform: none !important;
+  }
+}

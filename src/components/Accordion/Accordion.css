@@ -1,0 +1,100 @@
+.accordion {
+  display: grid;
+  border-top: 1px solid var(--border);
+}
+
+.accordion__item {
+  border-bottom: 1px solid var(--border);
+  transition: background-color var(--t-med) var(--ease);
+}
+.accordion__item:hover {
+  background: rgba(255, 255, 255, 0.015);
+}
+.accordion__item.is-open {
+  background: rgba(255, 90, 31, 0.03);
+}
+
+.accordion__heading {
+  margin: 0;
+  font-size: inherit;
+}
+
+.accordion__trigger {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: clamp(1rem, 2vw, 1.35rem) 0;
+  text-align: left;
+  color: var(--text);
+  transition: color var(--t-fast) var(--ease);
+}
+.accordion__trigger:hover {
+  color: var(--accent);
+}
+
+.accordion__index {
+  font-family: var(--font-tech);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--text-faint);
+  transition: color var(--t-fast) var(--ease);
+}
+.accordion__item.is-open .accordion__index {
+  color: var(--accent);
+}
+
+.accordion__question {
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+}
+
+.accordion__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex: none;
+  color: var(--accent);
+  border: 1px solid var(--border-2);
+  border-radius: var(--r-round);
+  transition: transform var(--t-med) var(--ease), background-color var(--t-med) var(--ease),
+    color var(--t-med) var(--ease);
+}
+.accordion__item.is-open .accordion__icon {
+  transform: rotate(135deg);
+  background: var(--accent);
+  color: #0a0a0a;
+  border-color: var(--accent);
+}
+
+.accordion__panel {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s var(--ease);
+}
+
+.accordion__content {
+  padding: 0 3.2rem clamp(1.1rem, 2vw, 1.5rem) 2.4rem;
+}
+.accordion__content p {
+  max-width: 78ch;
+  font-size: var(--fs-sm);
+  line-height: 1.75;
+  color: var(--text-dim);
+}
+
+@media (max-width: 700px) {
+  .accordion__trigger {
+    gap: var(--sp-3);
+  }
+  .accordion__content {
+    padding: 0 2.6rem 1.1rem 2.2rem;
+  }
+}

@@ -1,0 +1,17 @@
+/* Reveal — JS-only initial state so content stays visible without JS. */
+.js .reveal {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+.js .reveal.reveal--clip,
+.js .reveal.reveal--mask {
+  opacity: 1; /* clip-path drives visibility */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+}

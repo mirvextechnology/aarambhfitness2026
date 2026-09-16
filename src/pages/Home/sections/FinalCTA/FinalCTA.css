@@ -1,0 +1,122 @@
+.final-cta {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: clamp(520px, 78vh, 780px);
+  padding-block: var(--section-y);
+  overflow: hidden;
+  background: var(--bg-900);
+  text-align: center;
+}
+
+.final-cta__bg {
+  position: absolute;
+  inset: -6% 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.final-cta__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+}
+.final-cta__scrim {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 45%, rgba(255, 90, 31, 0.2) 0%, transparent 58%),
+    linear-gradient(180deg, rgba(10, 10, 10, 0.94) 0%, rgba(10, 10, 10, 0.78) 45%, rgba(10, 10, 10, 0.97) 100%);
+}
+.final-cta__grain {
+  position: absolute;
+  inset: 0;
+  background-image: var(--grain);
+  background-repeat: repeat;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+}
+
+.final-cta__content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  justify-items: center;
+  max-width: 58rem;
+}
+.final-cta__content .eyebrow {
+  justify-content: center;
+}
+
+.final-cta__title {
+  font-size: var(--fs-hero);
+  font-weight: 700;
+  line-height: 0.86;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.final-cta__title em {
+  font-style: normal;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--accent);
+}
+
+.final-cta__lede {
+  max-width: 52ch;
+  font-size: var(--fs-lg);
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.final-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-top: 0.4rem;
+}
+
+.final-cta__meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.5rem;
+  list-style: none;
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.final-cta__meta li {
+  position: relative;
+  font-family: var(--font-tech);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.final-cta__meta li + li::before {
+  content: '';
+  position: absolute;
+  left: -0.85rem;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 700px) {
+  .final-cta__actions .btn {
+    flex: 1 1 100%;
+  }
+  .final-cta__meta {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .final-cta__meta li + li::before {
+    display: none;
+  }
+}

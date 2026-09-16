@@ -1,0 +1,96 @@
+.plan-cmp-section {
+  background: var(--bg-900);
+}
+.plan-cmp-section__grid {
+  display: grid;
+  gap: clamp(1.5rem, 3.5vw, 3rem);
+}
+
+.plan-cmp {
+  display: grid;
+  gap: var(--sp-4);
+}
+.plan-cmp__title {
+  font-family: var(--font-tech);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.plan-cmp__wrap {
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  background: var(--border);
+}
+
+.plan-cmp__row {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.8fr) repeat(3, minmax(0, 1fr));
+  gap: 1px;
+}
+.plan-cmp__row--head .plan-cmp__label,
+.plan-cmp__row--head .plan-cmp__col {
+  background: var(--bg-900);
+}
+.plan-cmp__col {
+  padding: 0.85rem clamp(0.6rem, 1.4vw, 1.1rem);
+  font-family: var(--font-display);
+  font-size: clamp(0.85rem, 1.3vw, 1.05rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  transition: background-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+}
+.plan-cmp__col.is-active {
+  background: var(--accent);
+  color: #0a0a0a;
+}
+
+.plan-cmp__label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem clamp(0.7rem, 1.4vw, 1.1rem);
+  font-family: var(--font-tech);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  background: var(--bg-850);
+}
+.plan-cmp__label em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.plan-cmp__cell {
+  display: flex;
+  align-items: center;
+  padding: 0.85rem clamp(0.6rem, 1.4vw, 1.1rem);
+  font-size: var(--fs-sm);
+  line-height: 1.45;
+  color: var(--text-dim);
+  background: var(--bg-850);
+  transition: background-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+}
+.plan-cmp__cell.is-active {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+@media (max-width: 760px) {
+  .plan-cmp__wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .plan-cmp__row {
+    min-width: 640px;
+  }
+}

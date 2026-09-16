@@ -1,0 +1,5 @@
+/* App shell layout. Component styles live in their own folders. */
+.app__chrome {
+  position: relative;
+  z-index: 1;
+}

@@ -1,0 +1,91 @@
+/* ============================================================
+   App-level global rules that do not belong in a component file.
+   ============================================================ */
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  isolation: isolate;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100dvh;
+}
+
+.main {
+  flex: 1;
+  padding-top: 0;
+}
+
+/* Route content fades in after the transition panels clear. */
+.route-view {
+  animation: af-fade-in 0.42s var(--ease) both;
+}
+
+/* Keep page content clear of the fixed mobile conversion bar. */
+@media (max-width: 768px) {
+  .main {
+    padding-bottom: calc(60px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* SweetAlert2 sits above everything and matches the dark theme. */
+.swal2-container {
+  z-index: 2000 !important;
+}
+.swal2-popup {
+  border: 1px solid var(--border-2) !important;
+  border-radius: 8px !important;
+}
+.swal2-title {
+  font-family: var(--font-display) !important;
+  font-size: 1.35rem !important;
+  letter-spacing: 0.01em;
+}
+.swal2-html-container {
+  font-size: 0.9rem !important;
+  line-height: 1.6 !important;
+}
+.swal2-styled.swal2-confirm {
+  font-family: var(--font-tech) !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase;
+  border-radius: 4px !important;
+  padding: 0.7rem 1.4rem !important;
+}
+.swal2-styled.swal2-cancel {
+  font-family: var(--font-tech) !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase;
+  border-radius: 4px !important;
+  padding: 0.7rem 1.4rem !important;
+}
+
+/* Lazy route fallback */
+.route-loader {
+  display: grid;
+  place-items: center;
+  min-height: 70vh;
+  gap: 1rem;
+}
+.route-loader__ring {
+  width: 42px;
+  height: 42px;
+  border: 2px solid var(--border-2);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: af-spin 0.85s linear infinite;
+}
+.route-loader__text {
+  font-family: var(--font-tech);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
