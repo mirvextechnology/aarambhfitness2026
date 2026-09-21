@@ -84,19 +84,15 @@ export function PerformanceRing({ size = 24, ...props }) {
 /** Aarambh wordmark "A" mark used in the logo. */
 export function AarambhMark({ size = 34, ...props }) {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 40 40"
+    <img
+      src="/logo.png"
       width={size}
       height={size}
-      fill="none"
+      alt="Aarambh Fitness"
       aria-hidden="true"
+      style={{ objectFit: 'contain' }}
       {...props}
-    >
-      <rect x="0.75" y="0.75" width="38.5" height="38.5" rx="8" stroke="#FF5A1F" strokeWidth="1.5" />
-      <path d="M20 9l9.5 22h-5.1L20 20.6 15.6 31h-5.1L20 9z" fill="#FF5A1F" />
-      <rect x="16.2" y="24.6" width="7.6" height="2.6" rx="1.3" fill="#0A0A0A" />
-    </svg>
+    />
   );
 }
 
